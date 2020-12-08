@@ -17,7 +17,6 @@ export default function Root() {
   useEffect(() => {
     dispatch(commonActions.appInit());
   }, []);
-  console.log(locale, messages)
   return (
     <IntlProvider locale={locale} messages={messages}>
       <SafeAreaProvider>

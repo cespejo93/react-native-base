@@ -1,15 +1,22 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import * as testSelectors from '../selectors/example.selectors';
+
+import { Text, View } from '../components';
 
 export default function TabTwoScreen() {
+  const myStoreVariable = useSelector(testSelectors.getMyStoreVariable)
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.js" />
+      {myStoreVariable && (
+        <>
+          <View style={styles.separator} />
+          <Text>myStoreVariable</Text>
+        </>
+      )}
     </View>
   );
 }

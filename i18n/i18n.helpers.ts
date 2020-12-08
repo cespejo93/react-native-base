@@ -3,7 +3,6 @@
 
 export function* importLanguage(locale: string = 'en') {
   const frontTranslations = require(`./${locale}`);
-  console.log('frontTranslations', frontTranslations);
   let nestedMessages = frontTranslations;
   // const externalCopies = yield requester.makeRequest(
   //   `${config.backendUrlBase}i18n?locale=${locale}`,
