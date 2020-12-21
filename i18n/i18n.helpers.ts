@@ -1,8 +1,9 @@
 // import { request as requester } from 'sonata-react-components/lib/helpers';
-// import { en } from '../../src/i18n';
+import * as languages from './translations';
 
 export function* importLanguage(locale: string = 'en') {
-  const frontTranslations = require(`./${locale}`);
+  // @ts-ignore
+  const frontTranslations = languages[locale] || languages.en;
   let nestedMessages = frontTranslations;
   // const externalCopies = yield requester.makeRequest(
   //   `${config.backendUrlBase}i18n?locale=${locale}`,
