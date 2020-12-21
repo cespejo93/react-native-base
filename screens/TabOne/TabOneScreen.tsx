@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { Text, View } from '../../components';
 import StoreInteractionTest from './StoreInteractionTest';
 import request from "../../helpers/request";
+import containerStyles from "../../styles/container.style";
+import titleStyles from "../../styles/tittle.style";
 
 export default function TabOneScreen() {
   const intl = useIntl()
@@ -16,8 +18,8 @@ export default function TabOneScreen() {
       .then((res: any[]) => setArr(res))
   }, [])
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{intl.formatMessage({ id: 'example.tabOne.title' })}</Text>
+    <View style={containerStyles.default}>
+      <Text style={titleStyles.default}>{intl.formatMessage({ id: 'example.tabOne.title' })}</Text>
       <StoreInteractionTest />
 
       <Text>Comments:</Text>
@@ -29,15 +31,6 @@ export default function TabOneScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
   separator: {
     marginVertical: 30,
     height: 1,
