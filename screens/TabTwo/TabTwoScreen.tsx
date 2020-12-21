@@ -2,9 +2,9 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import * as testSelectors from '../selectors/example.selectors';
+import * as testSelectors from '../../selectors/example.selectors';
 
-import { Text, View } from '../components';
+import { Text, View } from '../../components';
 
 export default function TabTwoScreen() {
   const myStoreVariable = useSelector(testSelectors.getMyStoreVariable)
